@@ -1,0 +1,24 @@
+---
+import { ATLTags } from "@/components/Tags"
+import { ArticleWrapper } from "@/components/Wrapper"
+import "../styles/global.css"
+const { frontmatter } = Astro.props
+---
+
+<html lang="en">
+  <head>
+    <!-- big thanks to Jan Antonin Kolar (https://unsplash.com/@jankolar) for the wonderfull banner image!  -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={frontmatter.metaDescription} />
+    <title>The Card Catalog | Ask the Librarian</title>
+  </head>
+  <body>
+    <ArticleWrapper>
+      <h1 class="articleTitle">{frontmatter.title}</h1>
+      <ATLTags tags={frontmatter.tags ?? []} />
+      <slot />
+    </ArticleWrapper>
+  </body>
+</html>

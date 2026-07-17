@@ -1,0 +1,18 @@
+---
+layout: "../layouts/atl.astro"
+title: "Testing"
+metaDescription: "An Example"
+---
+You may have been collecting books for a long time before you’re ready to open a lending library. If so, you may indeed know almost all of the tricks of the trade. But just maybe there are a few ideas for finding good, true, and beautiful books that you didn’t know.
+
+First of all, see what is already in your hand. What books do you have that will be good volumes for a lending library? You will want to sort your books into groups: book that you want to lend, books that you want to keep out of your lending library because of their high monetary value or sentimental value or both, and books you want to discard (how did that copy of *Johnny Goes to Disneyland* get into my house?).
+
+Next, place the books in the first group in some kind of order: alphabetical order, grouped by subjects, grouped on shelves by curriculum years, something. (*Yes, I am going to get around to telling you how and where to acquire more books. Be patient.*) And then list the books you have somewhere. Make a handwritten list. Type a list and print it. Or enter the books into a database, either Michelle’s Library Lady database, or LibraryThing, or some other books database.
+
+Now you are ready to begin to add to your library. To do that you need a wish list. Again, pen and paper will do at first, but you will probably want to move your wish list to a computer-based list at some point. You can use LibraryThing or Amazon or Goodreads or Biblioguides or any of a number of applications for your wish list. Or you can just list your desired titles in a web-based document. As you come across titles that you feel would be excellent additions to your library, add them to your list. Just as you did for the books you already own, you will want to keep your wish list in some kind of order, most likely alphabetical by author or title. My wish list on Amazon grew to over 1,000 books, and then Amazon wouldn’t let me search the wish list to find a particular title anymore. That’s when I moved my wish list to LibraryThing and to Biblioguides (goodbye, Amazon!).
+
+If your wish list and/or your library list or catalog are both online, then when you are out and about shopping for books you can search to see if you already own a copy of a particular title or if it’s one of those many books you wish you owned. If your wish list is short, you can carry a paper copy with you at all times. Always have your list close at hand because you never know when a great book is going to jump out and scream, “Buy Me!”
+
+Now, armed with the knowledge of what you already have and with an up to date and accessible wishlist, you are ready to receive the top-secret information on where experienced living books librarians find all those good, beautiful and true books. *“Your mission, should you decide to accept it . . . “*
+
+[Read Part 2: Where do I find affordable living books for my library? to find out more.](https://example.com)

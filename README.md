@@ -2,6 +2,10 @@
 
 This is a template for a new Astro project with React, TypeScript, and shadcn/ui.
 
+## shadcn/ui Preset
+`--preset b5VaMHpcOY`
+
+
 ## Adding components
 
 To add components to your app, run the following command:
