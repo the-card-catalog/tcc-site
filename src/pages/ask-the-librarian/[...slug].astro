@@ -1,0 +1,35 @@
+---
+import { ATLTags } from "@/components/Tags"
+import { Wrapper } from "@/components/Wrapper"
+import { getCollection, render } from "astro:content"
+import "../../styles/global.css"
+
+export async function getStaticPaths() {
+  const entries = await getCollection("askTheLibrarian")
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }))
+}
+
+const { entry } = Astro.props
+const { Content } = await render(entry)
+---
+
+<html lang="en">
+  <head>
+    <!-- big thanks to Jan Antonin Kolar (https://unsplash.com/@jankolar) for the wonderfull banner image!  -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={entry.data.description} />
+    <title>Ask the Librarian</title>
+  </head>
+  <body>
+    <Wrapper>
+      <h1 class="articleTitle">{entry.data.title}</h1>
+      <ATLTags tags={entry.data.tags ?? []} />
+      <Content />
+    </Wrapper>
+  </body>
+</html>

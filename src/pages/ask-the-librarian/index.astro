@@ -1,0 +1,29 @@
+---
+import { ATLGallery } from "@/components/Galleries"
+import { Wrapper } from "@/components/Wrapper"
+import { getCollection } from "astro:content"
+import "../../styles/global.css"
+const articles = await getCollection("askTheLibrarian")
+---
+
+<html lang="en">
+  <head>
+    <!-- big thanks to Jan Antonin Kolar (https://unsplash.com/@jankolar) for the wonderfull banner image!  -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>Ask the Librarian</title>
+  </head>
+  <body>
+    <Wrapper>
+      <h1 class="mainPageTitle">Ask The Librarian</h1>
+      <p class="py-4">
+        This Question and Answer page is part of <a href="/">The Card Catalog</a
+        > – a lending library resource hub.
+      </p>
+
+      <ATLGallery articles={articles} />
+    </Wrapper>
+  </body>
+</html>

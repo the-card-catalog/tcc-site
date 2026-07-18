@@ -136,6 +136,9 @@
 .articleTitle {
   @apply text-3xl;
 }
+.mainPageTitle {
+  @apply text-center text-3xl;
+}
 @layer base {
   * {
     @apply border-border outline-ring/50;

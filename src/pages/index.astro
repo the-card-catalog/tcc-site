@@ -1,17 +1,52 @@
 ---
-import Layout from "@/layouts/main.astro"
-import { Button } from "@/components/ui/button"
+import { Wrapper } from "@/components/Wrapper"
+import "@/styles/global.css"
 ---
 
-<Layout>
-  <div class="flex min-h-svh p-6">
-    <div class="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-      <div>
-        <h1 class="font-medium">Project ready!</h1>
-        <p>You may now add components and start building.</p>
-        <p>We've already added the button component for you.</p>
-        <Button client:load className="mt-2">Button</Button>
+<html lang="en">
+  <head>
+    <!-- big thanks to Jan Antonin Kolar (https://unsplash.com/@jankolar) for the wonderfull banner image!  -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>The Card Catalog</title>
+  </head>
+  <body>
+    <Wrapper>
+      <h1 class="mainPageTitle">The Card Catalog</h1>
+      <div class="typeset typeset-article">
+        <p class="py-4">
+          Hello! Welcome to The Card Catalog, a resource for private lending
+          librarians, wanna-be librarians, and people just interested in living
+          books libraries and how they work. We, a group of both experienced and
+          novice librarians, are working together to bring you encouragement in
+          your own library journey, answers to some of your burning questions
+          about how to start and manage a private lending library, and of
+          course, some book talk along the way. We all love the books.
+        </p>
+
+        <p>
+          We will have quite a few people contributing to this resource page,
+          and we will be introducing you to librarians from many places with
+          libraries both big and small. For now, suffice it to say that we are
+          thankful to Sara Masarik and Diane Pendergraft for masterminding both
+          the content and the design of this webpage. Also contributing to the
+          Big Idea of a web resource for living books libraries and librarians
+          are Tanya Arnold and Sarah Kim of Biblioguides, Kristi Stansfield,
+          librarian at Maryland Living Books Library, and Sherry Early,
+          librarian at Meriadoc Homeschool Library.
+        </p>
+
+        <p>
+          So now you know enough to get started. Scroll down to explore our Ask
+          the Librarian questions and answers, Shelf Notes, our archive of
+          library newsletters, and Library Stories, encouragement for the
+          library journey. And if you're here because you are looking for a
+          private living books lending library near you, check out the Private
+          Lending Library Directory at Biblioguides.
+        </p>
       </div>
-    </div>
-  </div>
-</Layout>
+    </Wrapper>
+  </body>
+</html>
