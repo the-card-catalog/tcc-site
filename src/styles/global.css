@@ -157,3 +157,8 @@
     @apply text-foreground hover:text-primary;
   }
 }
+@utility link-wrapper {
+  a {
+    @apply block h-full text-inherit no-underline;
+  }
+}
