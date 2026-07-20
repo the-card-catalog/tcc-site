@@ -1,0 +1,59 @@
+---
+import rawCounties from "@/assets/counties-10m.json"
+import rawStates from "@/assets/states-10m.json"
+import { geoAlbersUsa, geoPath } from "d3-geo"
+import { feature } from "topojson-client"
+import type { GeometryCollection, Topology } from "topojson-specification"
+const counties10m = rawCounties as unknown as Topology<{
+  counties: GeometryCollection
+}>
+const states10m = rawStates as unknown as Topology<{
+  states: GeometryCollection
+}>
+const countyFeatures = feature(
+  counties10m,
+  counties10m.objects.counties
+).features
+const stateFeatures = feature(states10m, states10m.objects.states).features
+interface Props {
+  fips: string // e.g. "55087" (Sheboygan County, WI)
+}
+const { fips } = Astro.props
+const width = 960
+const height = 600
+const projection = geoAlbersUsa()
+  .scale(1200)
+  .translate([width / 2, height / 2])
+const path = geoPath(projection)
+const target = countyFeatures.find((f: { id: string }) => f.id === fips)
+if (!target) throw new Error(`No county found for FIPS ${fips}`)
+const [markerX, markerY] = path.centroid(target)
+
+const stateFips = fips.slice(0, 2)
+const targetState = stateFeatures.find(
+  (f: { id: string }) => f.id === stateFips
+)
+if (!targetState) throw new Error(`No state found for FIPS ${stateFips}`)
+
+const stateBorders = stateFeatures
+  .map(
+    (f: any) =>
+      `<path d="${path(f)}" stroke="#ffffff" stroke-width="0.5" class="fill-chart-3/50"/>`
+  )
+  .join("")
+const highlightedState = `<path d="${path(targetState)}" fill="#dc2626" stroke="#ff" stroke-width="0.5"/>`
+---
+
+<div class="m-auto w-full max-w-150">
+  <svg viewBox={`0 0 ${width} ${height}`} xmlns="http://www.w3.org/2000/svg">
+    <g set:html={stateBorders} />
+    <g set:html={highlightedState} />
+    <!-- <circle
+      cx={markerX}
+      cy={markerY}
+      r="6"
+      fill="#dc2626"
+      stroke="#fff"
+      stroke-width="2"></circle> -->
+  </svg>
+</div>
