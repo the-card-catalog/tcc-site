@@ -1,6 +1,6 @@
 import { Badge } from "./ui/badge";
 
-export function ATLTags({ tags }: { tags: Array<string> }) {
+export function ArticleTags({ tags }: { tags: Array<string> }) {
     return (
         <div className="flex gap-4">
             {tags.map((tag) => (

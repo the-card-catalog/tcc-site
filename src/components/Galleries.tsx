@@ -1,5 +1,5 @@
 import { Bookmark, BookMarked, CircleQuestionMark, Mail, Mic } from "lucide-react";
-import { ATLTags } from "./Tags";
+import { ArticleTags } from "./Tags";
 import { Card, CardContent, CardHeader } from "./ui/card";
 
 interface Article {
@@ -18,7 +18,7 @@ export function ATLGallery({ articles }: { articles: Array<Article> }) {
             <a className='block no-underline text-inherit h-full' href={`/ask-the-librarian/${article.id}`} key={article.id}>
                 <Card className='hover:bg-muted/85 h-full'>
                     <CardHeader><span className='text-[1.1rem]'>{article.data.title}</span></CardHeader>
-                    <CardContent><ATLTags tags={article.data.tags} /><p className='p-2'><em>{article.data.description}</em></p></CardContent>
+                    <CardContent><ArticleTags tags={article.data.tags} /><p className='p-2'><em>{article.data.description}</em></p></CardContent>
                 </Card>
             </a>
 

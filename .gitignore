@@ -23,3 +23,4 @@ pnpm-debug.log*
 
 # Scripts
 ntn_md/
+ntn_*
