@@ -36,7 +36,7 @@ export function ATLGallery({ articles }: { articles: Array<ALTArticle> }) {
 export function LSGallery({ articles }: { articles: Array<LSArticle> }) {
     return (<div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4">
         {articles.map((article) => (
-            <a className='block no-underline text-inherit h-full' href={`/ask-the-librarian/${article.id}`} key={article.id}>
+            <a className='block no-underline text-inherit h-full' href={`/librarian-stories/${article.id}`} key={article.id}>
                 <Card className='hover:bg-muted/85 h-full'>
                     <CardHeader><span className='text-[1.1rem]'>{article.data.title}</span></CardHeader>
                     <CardContent><ArticleTags tags={article.data.location} /></CardContent>
