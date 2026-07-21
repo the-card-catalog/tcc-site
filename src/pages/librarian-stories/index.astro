@@ -16,7 +16,7 @@ const articles = await getCollection("librarianStories")
     <title>The Card Catalog</title>
   </head>
   <body>
-    <Wrapper>
+    <Wrapper client:load>
       <h1 class="mainPageTitle">Librarian Stories</h1>
       <div class="typeset typeset-article"></div>
       <LSGallery articles={articles} />
