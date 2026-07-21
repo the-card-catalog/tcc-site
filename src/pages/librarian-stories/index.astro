@@ -1,6 +1,9 @@
 ---
+import { LSGallery } from "@/components/Galleries"
 import { Wrapper } from "@/components/Wrapper"
 import "@/styles/global.css"
+import { getCollection } from "astro:content"
+const articles = await getCollection("librarianStories")
 ---
 
 <html lang="en">
@@ -16,6 +19,7 @@ import "@/styles/global.css"
     <Wrapper>
       <h1 class="mainPageTitle">Librarian Stories</h1>
       <div class="typeset typeset-article"></div>
+      <LSGallery articles={articles} />
     </Wrapper>
   </body>
 </html>

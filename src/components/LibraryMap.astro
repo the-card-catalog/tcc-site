@@ -19,8 +19,8 @@ const projection = geoAlbersUsa()
 const path = geoPath(projection)
 
 const stateFipsSet = new Set(fips.map((f) => f.slice(0, 2)))
-const targetStates = stateFeatures.filter((s: { id: string }) =>
-  stateFipsSet.has(s.id)
+const targetStates = stateFeatures.filter((s: any) =>
+  stateFipsSet.has(String(s.id))
 )
 if (targetStates.length === 0) {
   throw new Error(`No states found for FIPS codes ${fips.join(", ")}`)

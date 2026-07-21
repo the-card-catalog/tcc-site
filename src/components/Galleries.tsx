@@ -2,23 +2,44 @@ import { Bookmark, BookMarked, CircleQuestionMark, Mail, Mic } from "lucide-reac
 import { ArticleTags } from "./Tags";
 import { Card, CardContent, CardHeader } from "./ui/card";
 
-interface Article {
+interface ALTArticle {
     id: string
-    data: ArticleData
+    data: ATLData
 }
-interface ArticleData {
+interface LSArticle {
+    id: string
+    data: LSData
+}
+interface ATLData {
     title: string,
     description: string,
     tags: Array<string>
 }
+interface LSData {
+    title: string,
+    location: Array<string>
+}
 
-export function ATLGallery({ articles }: { articles: Array<Article> }) {
+export function ATLGallery({ articles }: { articles: Array<ALTArticle> }) {
     return (<div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4">
         {articles.map((article) => (
             <a className='block no-underline text-inherit h-full' href={`/ask-the-librarian/${article.id}`} key={article.id}>
                 <Card className='hover:bg-muted/85 h-full'>
                     <CardHeader><span className='text-[1.1rem]'>{article.data.title}</span></CardHeader>
                     <CardContent><ArticleTags tags={article.data.tags} /><p className='p-2'><em>{article.data.description}</em></p></CardContent>
+                </Card>
+            </a>
+
+        ))}
+    </div>)
+}
+export function LSGallery({ articles }: { articles: Array<LSArticle> }) {
+    return (<div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {articles.map((article) => (
+            <a className='block no-underline text-inherit h-full' href={`/ask-the-librarian/${article.id}`} key={article.id}>
+                <Card className='hover:bg-muted/85 h-full'>
+                    <CardHeader><span className='text-[1.1rem]'>{article.data.title}</span></CardHeader>
+                    <CardContent><ArticleTags tags={article.data.location} /></CardContent>
                 </Card>
             </a>
 
@@ -53,8 +74,7 @@ export function FrontGallery() {
             </div>
         </a>
         {/* Librarian Stories */}
-        {/* TODO: Add real link */}
-        <a className="link-wrapper" href="">
+        <a className="link-wrapper" href="/librarian-stories">
             <div className="bg-card rounded-lg  ring-1 ring-foreground/10 h-full ">
                 <div className="bg-primary/50 items-center flex justify-center rounded-t-lg p-4">
                     <BookMarked size={50} className="text-primary h-15" />
